@@ -1,3 +1,17 @@
+var symbolsForPowersOfTen = [
+    {
+        whole: 'I'
+    },
+    {
+        half: 'V',
+        whole: 'X'
+    },
+    {
+        half: 'L',
+        whole: 'C'
+    }
+];
+
 module.exports.arabicToRoman = function(arabic) {
     var roman = "";
 
@@ -15,15 +29,15 @@ module.exports.arabicToRoman = function(arabic) {
         }
     }
 
-    substituteRepeatingSymbolsForValues('C', 100);
+    substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[2].whole, 100);
     substituteSymbolForValue('XC', 90);
-    substituteSymbolForValue('L', 50);
+    substituteSymbolForValue(symbolsForPowersOfTen[2].half, 50);
     substituteSymbolForValue('XL', 40);
-    substituteRepeatingSymbolsForValues('X', 10);
+    substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[1].whole, 10);
     substituteSymbolForValue('IX', 9);
-    substituteSymbolForValue('V', 5);
+    substituteSymbolForValue(symbolsForPowersOfTen[1].half, 5);
     substituteSymbolForValue('IV', 4);
-    substituteRepeatingSymbolsForValues('I', 1);
+    substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[0].whole, 1);
 
     return roman;
 };
