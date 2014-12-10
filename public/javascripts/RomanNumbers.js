@@ -12,6 +12,10 @@ module.exports.arabicToRoman = function(arabic) {
         roman += 'X';
         arabic -=10;
     }
+    if (arabic >= 9) {
+        roman += 'IX';
+        arabic -= 9;
+    }
     if (arabic >= 5) {
         roman += 'V';
         arabic -= 5;
