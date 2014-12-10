@@ -8,9 +8,9 @@ function getTrailingIs(arabic) {
 
 module.exports.arabicToRoman = function(arabic) {
     var roman = "";
-    if (arabic === 5) {
-        return 'V';
+    if (arabic >= 5) {
+        roman = 'V';
+        arabic -= 5;
     }
-    roman = getTrailingIs(arabic, roman);
-    return roman;
+    return roman + getTrailingIs(arabic);
 };
