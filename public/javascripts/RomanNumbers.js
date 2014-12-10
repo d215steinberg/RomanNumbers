@@ -13,7 +13,7 @@ module.exports.arabicToRoman = function(arabic) {
         arabic -=10;
     }
     if (arabic >= 5) {
-        roman = 'V';
+        roman += 'V';
         arabic -= 5;
     }
     if (arabic === 4) {
