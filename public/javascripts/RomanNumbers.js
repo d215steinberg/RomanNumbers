@@ -53,14 +53,12 @@ module.exports.arabicToRoman = function(arabic) {
         }
     }
 
-    substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[2].whole, getWholePowerOfTen(2));
-    substituteSymbolForValue(getAlmostWholeSymbolForPowerOfTen(2), getAlmostWholePowerOfTen(2));
-    substituteSymbolForValue(symbolsForPowersOfTen[2].half, getHalfPowerOfTen(2));
-    substituteSymbolForValue(getAlmostHalfSymbolForPowerOfTen(2), getAlmostHalfPowerOfTen(2));
-    substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[1].whole, getWholePowerOfTen(1));
-    substituteSymbolForValue(getAlmostWholeSymbolForPowerOfTen(1), getAlmostWholePowerOfTen(1));
-    substituteSymbolForValue(symbolsForPowersOfTen[1].half, getHalfPowerOfTen(1));
-    substituteSymbolForValue(getAlmostHalfSymbolForPowerOfTen(1), getAlmostHalfPowerOfTen(1));
+    for (var exponent = 2; exponent >= 1; exponent--) {
+        substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[exponent].whole, getWholePowerOfTen(exponent));
+        substituteSymbolForValue(getAlmostWholeSymbolForPowerOfTen(exponent), getAlmostWholePowerOfTen(exponent));
+        substituteSymbolForValue(symbolsForPowersOfTen[exponent].half, getHalfPowerOfTen(exponent));
+        substituteSymbolForValue(getAlmostHalfSymbolForPowerOfTen(exponent), getAlmostHalfPowerOfTen(exponent));
+    }
     substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[0].whole, getWholePowerOfTen(0));
 
     return roman;
