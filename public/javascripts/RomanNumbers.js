@@ -1,8 +1,11 @@
 module.exports.arabicToRoman = function(arabic) {
     var roman = "";
-    while (arabic >= 10) {
-        roman += 'X';
-        arabic -=10;
+
+    function substituteRepeatingSymbolsForValues(symbol, value) {
+        while (arabic >= value) {
+            roman += symbol;
+            arabic -= value;
+        }
     }
 
     function substituteSymbolForValue(symbol, value) {
@@ -12,14 +15,11 @@ module.exports.arabicToRoman = function(arabic) {
         }
     }
 
+    substituteRepeatingSymbolsForValues('X', 10);
     substituteSymbolForValue('IX', 9);
     substituteSymbolForValue('V', 5);
     substituteSymbolForValue('IV', 4);
-
-    while (arabic >= 1) {
-        roman += 'I';
-        arabic -= 1;
-    }
+    substituteRepeatingSymbolsForValues('I', 1);
 
     return roman;
 };
