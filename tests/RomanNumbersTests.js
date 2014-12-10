@@ -13,4 +13,8 @@ describe('Roman Numbers', function() {
     it("should return III for 3", function() {
        RomanNumbers.arabicToRoman(3).should.equal('III');
     });
+
+    it("should return V for 5", function() {
+        RomanNumbers.arabicToRoman(5).should.equal('V');
+    });
 });
