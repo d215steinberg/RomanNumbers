@@ -109,4 +109,8 @@ describe('Roman Numbers', function () {
     it('should return CCCXCIX for 399', function() {
        RomanNumbers.arabicToRoman(399).should.equal('CCCXCIX');
     });
+
+    it('should return MMCMXCIX for 2999', function() {
+        RomanNumbers.arabicToRoman(2999).should.equal('MMCMXCIX');
+    });
 });

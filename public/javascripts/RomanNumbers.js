@@ -9,6 +9,10 @@ var symbolsForPowersOfTen = [
     {
         half: 'L',
         whole: 'C'
+    },
+    {
+        half: '*',
+        whole: 'M'
     }
 ];
 
@@ -76,7 +80,7 @@ module.exports.arabicToRoman = function(arabic) {
         substituteSymbolForValue(getAlmostHalfSymbolForPowerOfTen(exponent), getAlmostHalfPowerOfTen(exponent));
     }
 
-    for (var exponent = 2; exponent >= 1; exponent--) {
+    for (var exponent = 3; exponent >= 1; exponent--) {
         substituteRepeatingSymbolsForWholePowersOfTen(exponent);
         substituteSymbolForAlmostWholePowerOfTen(exponent);
         substituteSymbolForHalfPowerOfTen(exponent);
