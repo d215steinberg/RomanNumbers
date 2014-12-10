@@ -50,43 +50,46 @@ function getAlmostHalfPowerOfTen(exponent) {
 module.exports.arabicToRoman = function(arabic) {
     var roman = "";
 
-    function substituteRepeatingSymbolsForValues(symbol, value) {
-        while (arabic >= value) {
-            roman += symbol;
-            arabic -= value;
-        }
-    }
-
     function substituteSymbolForValue(symbol, value) {
-        if (arabic >= value) {
-            roman += symbol;
-            arabic -= value;
+        roman += symbol;
+        arabic -= value;
+    }
+
+    function substituteRepeatingSymbolForEachContainmentOfValue(symbol, value) {
+        while (arabic >= value) {
+            substituteSymbolForValue(symbol, value);
         }
     }
 
-    function substituteRepeatingSymbolsForWholePowersOfTen(exponent) {
-        substituteRepeatingSymbolsForValues(getWholeSymbolForPowerOfTen(exponent), getWholePowerOfTen(exponent));
+    function substituteSymbolForValueIfContained(symbol, value) {
+        if (arabic >= value) {
+            substituteSymbolForValue(symbol, value);
+        }
+    }
+
+    function substituteRepeatingSymbolForEachWholePowerOfTen(exponent) {
+        substituteRepeatingSymbolForEachContainmentOfValue(getWholeSymbolForPowerOfTen(exponent), getWholePowerOfTen(exponent));
     }
 
     function substituteSymbolForAlmostWholePowerOfTen(exponent) {
-        substituteSymbolForValue(getAlmostWholeSymbolForPowerOfTen(exponent), getAlmostWholePowerOfTen(exponent));
+        substituteSymbolForValueIfContained(getAlmostWholeSymbolForPowerOfTen(exponent), getAlmostWholePowerOfTen(exponent));
     }
 
     function substituteSymbolForHalfPowerOfTen(exponent) {
-        substituteSymbolForValue(getHalfSymbolForPowerOfTen(exponent), getHalfPowerOfTen(exponent));
+        substituteSymbolForValueIfContained(getHalfSymbolForPowerOfTen(exponent), getHalfPowerOfTen(exponent));
     }
 
     function substituteSymbolForAlmostHalfPowerOfTen(exponent) {
-        substituteSymbolForValue(getAlmostHalfSymbolForPowerOfTen(exponent), getAlmostHalfPowerOfTen(exponent));
+        substituteSymbolForValueIfContained(getAlmostHalfSymbolForPowerOfTen(exponent), getAlmostHalfPowerOfTen(exponent));
     }
 
     for (var exp = 3; exp >= 1; exp--) {
-        substituteRepeatingSymbolsForWholePowersOfTen(exp);
+        substituteRepeatingSymbolForEachWholePowerOfTen(exp);
         substituteSymbolForAlmostWholePowerOfTen(exp);
         substituteSymbolForHalfPowerOfTen(exp);
         substituteSymbolForAlmostHalfPowerOfTen(exp);
     }
-    substituteRepeatingSymbolsForWholePowersOfTen(0);
+    substituteRepeatingSymbolForEachWholePowerOfTen(0);
 
     return roman;
 };
