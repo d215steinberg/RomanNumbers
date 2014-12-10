@@ -17,7 +17,7 @@ module.exports.arabicToRoman = function(arabic) {
         arabic -= 5;
     }
     if (arabic === 4) {
-        roman = 'IV';
+        roman += 'IV';
         arabic -= 4;
     }
     return roman + getTrailingIs(arabic);

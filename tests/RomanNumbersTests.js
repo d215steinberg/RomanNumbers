@@ -33,4 +33,12 @@ describe('Roman Numbers', function() {
     it('should return XIII for 13', function() {
        RomanNumbers.arabicToRoman(13).should.equal('XIII');
     });
+
+    it('should return XV for 15', function() {
+        RomanNumbers.arabicToRoman(15).should.equal('XV');
+    });
+
+    it('should return XIV for 14', function() {
+        RomanNumbers.arabicToRoman(14).should.equal('XIV');
+    });
 });
