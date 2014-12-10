@@ -5,16 +5,16 @@ module.exports.arabicToRoman = function(arabic) {
         arabic -=10;
     }
 
-    function substitueSymbolForValue(symbol, value) {
+    function substituteSymbolForValue(symbol, value) {
         if (arabic >= value) {
             roman += symbol;
             arabic -= value;
         }
     }
 
-    substitueSymbolForValue('IX', 9);
-    substitueSymbolForValue('V', 5);
-    substitueSymbolForValue('IV', 4);
+    substituteSymbolForValue('IX', 9);
+    substituteSymbolForValue('V', 5);
+    substituteSymbolForValue('IV', 4);
 
     while (arabic >= 1) {
         roman += 'I';
