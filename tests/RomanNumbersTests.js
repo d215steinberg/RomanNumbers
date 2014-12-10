@@ -17,4 +17,8 @@ describe('Roman Numbers', function() {
     it("should return V for 5", function() {
         RomanNumbers.arabicToRoman(5).should.equal('V');
     });
+
+    xit("should return VIII for 8", function() {
+       RomanNumbers.arabicToRoman(8).should.equal('VIII');
+    });
 });
