@@ -20,6 +20,10 @@ function getAlmostHalfSymbolForPowerOfTen(exponent) {
     return symbolsForPowersOfTen[exponent - 1].whole + symbolsForPowersOfTen[exponent].half;
 }
 
+function getWholePowerOfTen(exponent) {
+    return Math.pow(10, exponent);
+}
+
 module.exports.arabicToRoman = function(arabic) {
     var roman = "";
 
@@ -37,15 +41,15 @@ module.exports.arabicToRoman = function(arabic) {
         }
     }
 
-    substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[2].whole, 100);
+    substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[2].whole, getWholePowerOfTen(2));
     substituteSymbolForValue(getAlmostWholeSymbolForPowerOfTen(2), 90);
     substituteSymbolForValue(symbolsForPowersOfTen[2].half, 50);
     substituteSymbolForValue(getAlmostHalfSymbolForPowerOfTen(2), 40);
-    substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[1].whole, 10);
+    substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[1].whole, getWholePowerOfTen(1));
     substituteSymbolForValue(getAlmostWholeSymbolForPowerOfTen(1), 9);
     substituteSymbolForValue(symbolsForPowersOfTen[1].half, 5);
     substituteSymbolForValue(getAlmostHalfSymbolForPowerOfTen(1), 4);
-    substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[0].whole, 1);
+    substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[0].whole, getWholePowerOfTen(0));
 
     return roman;
 };
