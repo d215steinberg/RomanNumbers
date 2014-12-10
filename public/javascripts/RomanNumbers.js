@@ -64,19 +64,19 @@ module.exports.arabicToRoman = function(arabic) {
         }
     }
 
-    function substituteRepeatingSymbolsForWholePowersOfTen() {
+    function substituteRepeatingSymbolsForWholePowersOfTen(exponent) {
         substituteRepeatingSymbolsForValues(getWholeSymbolForPowerOfTen(exponent), getWholePowerOfTen(exponent));
     }
 
-    function substituteSymbolForAlmostWholePowerOfTen() {
+    function substituteSymbolForAlmostWholePowerOfTen(exponent) {
         substituteSymbolForValue(getAlmostWholeSymbolForPowerOfTen(exponent), getAlmostWholePowerOfTen(exponent));
     }
 
-    function substituteSymbolForHalfPowerOfTen() {
+    function substituteSymbolForHalfPowerOfTen(exponent) {
         substituteSymbolForValue(getHalfSymbolForPowerOfTen(exponent), getHalfPowerOfTen(exponent));
     }
 
-    function substituteSymbolForAlmostHalfPowerOfTen() {
+    function substituteSymbolForAlmostHalfPowerOfTen(exponent) {
         substituteSymbolForValue(getAlmostHalfSymbolForPowerOfTen(exponent), getAlmostHalfPowerOfTen(exponent));
     }
 
