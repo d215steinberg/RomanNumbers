@@ -60,13 +60,29 @@ module.exports.arabicToRoman = function(arabic) {
         }
     }
 
-    for (var exponent = 2; exponent >= 1; exponent--) {
+    function substituteRepeatingSymbolsForWholePowersOfTen() {
         substituteRepeatingSymbolsForValues(getWholeSymbolForPowerOfTen(exponent), getWholePowerOfTen(exponent));
+    }
+
+    function substituteSymbolForAlmostWholePowerOfTen() {
         substituteSymbolForValue(getAlmostWholeSymbolForPowerOfTen(exponent), getAlmostWholePowerOfTen(exponent));
+    }
+
+    function substituteSymbolForHalfPowerOfTen() {
         substituteSymbolForValue(getHalfSymbolForPowerOfTen(exponent), getHalfPowerOfTen(exponent));
+    }
+
+    function substituteSymbolForAlmostHalfPowerOfTen() {
         substituteSymbolForValue(getAlmostHalfSymbolForPowerOfTen(exponent), getAlmostHalfPowerOfTen(exponent));
     }
-    substituteRepeatingSymbolsForValues(getWholeSymbolForPowerOfTen(0), getWholePowerOfTen(0));
+
+    for (var exponent = 2; exponent >= 1; exponent--) {
+        substituteRepeatingSymbolsForWholePowersOfTen(exponent);
+        substituteSymbolForAlmostWholePowerOfTen(exponent);
+        substituteSymbolForHalfPowerOfTen(exponent);
+        substituteSymbolForAlmostHalfPowerOfTen(exponent);
+    }
+    substituteRepeatingSymbolsForWholePowersOfTen(0);
 
     return roman;
 };
