@@ -15,6 +15,7 @@ module.exports.arabicToRoman = function(arabic) {
         }
     }
 
+    substituteSymbolForValue('C', 100);
     substituteSymbolForValue('L', 50);
     substituteSymbolForValue('XL', 40);
     substituteRepeatingSymbolsForValues('X', 10);

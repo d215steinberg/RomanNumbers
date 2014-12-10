@@ -93,4 +93,8 @@ describe('Roman Numbers', function () {
     it('should return LXXXIX for 89', function() {
        RomanNumbers.arabicToRoman(89).should.equal('LXXXIX');
     });
+
+    it('should return CLXXXIX for 189', function() {
+        RomanNumbers.arabicToRoman(189).should.equal('CLXXXIX');
+    });
 });
