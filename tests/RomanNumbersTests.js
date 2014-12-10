@@ -25,4 +25,8 @@ describe('Roman Numbers', function() {
     it('should return IV for 4', function() {
        RomanNumbers.arabicToRoman(4).should.equal('IV');
     });
+
+    it('should return X for 10', function() {
+       RomanNumbers.arabicToRoman(10).should.equal('X');
+    });
 });
