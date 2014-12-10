@@ -66,7 +66,7 @@ module.exports.arabicToRoman = function(arabic) {
         substituteSymbolForValue(getHalfSymbolForPowerOfTen(exponent), getHalfPowerOfTen(exponent));
         substituteSymbolForValue(getAlmostHalfSymbolForPowerOfTen(exponent), getAlmostHalfPowerOfTen(exponent));
     }
-    substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[0].whole, getWholePowerOfTen(0));
+    substituteRepeatingSymbolsForValues(getWholeSymbolForPowerOfTen(0), getWholePowerOfTen(0));
 
     return roman;
 };
