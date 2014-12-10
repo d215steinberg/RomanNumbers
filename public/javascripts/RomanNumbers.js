@@ -64,27 +64,27 @@ module.exports.arabicToRoman = function(arabic) {
         }
     }
 
-    function substituteRepeatingSymbolsForWholePowersOfTen(exponent) {
+    function substituteRepeatingSymbolsForWholePowersOfTen() {
         substituteRepeatingSymbolsForValues(getWholeSymbolForPowerOfTen(exponent), getWholePowerOfTen(exponent));
     }
 
-    function substituteSymbolForAlmostWholePowerOfTen(exponent) {
+    function substituteSymbolForAlmostWholePowerOfTen() {
         substituteSymbolForValue(getAlmostWholeSymbolForPowerOfTen(exponent), getAlmostWholePowerOfTen(exponent));
     }
 
-    function substituteSymbolForHalfPowerOfTen(exponent) {
+    function substituteSymbolForHalfPowerOfTen() {
         substituteSymbolForValue(getHalfSymbolForPowerOfTen(exponent), getHalfPowerOfTen(exponent));
     }
 
-    function substituteSymbolForAlmostHalfPowerOfTen(exponent) {
+    function substituteSymbolForAlmostHalfPowerOfTen() {
         substituteSymbolForValue(getAlmostHalfSymbolForPowerOfTen(exponent), getAlmostHalfPowerOfTen(exponent));
     }
 
-    for (var exponent = 3; exponent >= 1; exponent--) {
-        substituteRepeatingSymbolsForWholePowersOfTen(exponent);
-        substituteSymbolForAlmostWholePowerOfTen(exponent);
-        substituteSymbolForHalfPowerOfTen(exponent);
-        substituteSymbolForAlmostHalfPowerOfTen(exponent);
+    for (var exp = 3; exp >= 1; exp--) {
+        substituteRepeatingSymbolsForWholePowersOfTen(exp);
+        substituteSymbolForAlmostWholePowerOfTen(exp);
+        substituteSymbolForHalfPowerOfTen(exp);
+        substituteSymbolForAlmostHalfPowerOfTen(exp);
     }
     substituteRepeatingSymbolsForWholePowersOfTen(0);
 
