@@ -12,17 +12,17 @@ module.exports.arabicToRoman = function(arabic) {
         roman += 'X';
         arabic -=10;
     }
-    if (arabic >= 9) {
-        roman += 'IX';
-        arabic -= 9;
+
+    function substitueSymbolForValue(symbol, value) {
+        if (arabic >= value) {
+            roman += symbol;
+            arabic -= value;
+        }
     }
-    if (arabic >= 5) {
-        roman += 'V';
-        arabic -= 5;
-    }
-    if (arabic === 4) {
-        roman += 'IV';
-        arabic -= 4;
-    }
+
+    substitueSymbolForValue('IX', 9);
+    substitueSymbolForValue('V', 5);
+    substitueSymbolForValue('IV', 4);
+
     return roman + getTrailingIs(arabic);
 };
