@@ -11,7 +11,7 @@ var symbolsForPowersOfTen = [
         whole: 'C'
     },
     {
-        half: '*',
+        half: 'D',
         whole: 'M'
     }
 ];

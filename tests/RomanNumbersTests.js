@@ -113,4 +113,8 @@ describe('Roman Numbers', function () {
     it('should return MMCMXCIX for 2999', function() {
         RomanNumbers.arabicToRoman(2999).should.equal('MMCMXCIX');
     });
+
+    it('should return MMDXL for 2540', function() {
+       RomanNumbers.arabicToRoman(2540).should.equal('MMDXL');
+    });
 });
