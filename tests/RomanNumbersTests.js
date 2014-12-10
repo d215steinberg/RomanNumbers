@@ -106,15 +106,51 @@ describe('Roman Numbers', function () {
         RomanNumbers.arabicToRoman(199).should.equal('CXCIX');
     });
 
-    it('should return CCCXCIX for 399', function() {
-       RomanNumbers.arabicToRoman(399).should.equal('CCCXCIX');
+    it('should return CCCXCIX for 399', function () {
+        RomanNumbers.arabicToRoman(399).should.equal('CCCXCIX');
     });
 
-    it('should return MMCMXCIX for 2999', function() {
+    it('should return MMCMXCIX for 2999', function () {
         RomanNumbers.arabicToRoman(2999).should.equal('MMCMXCIX');
     });
 
-    it('should return MMDXL for 2540', function() {
-       RomanNumbers.arabicToRoman(2540).should.equal('MMDXL');
+    it('should return MMDXL for 2540', function () {
+        RomanNumbers.arabicToRoman(2540).should.equal('MMDXL');
+    });
+
+    it('should return MMM for 3000', function () {
+        RomanNumbers.arabicToRoman(3000).should.equal('MMM');
+    });
+
+    it('should return DI for 501', function () {
+        RomanNumbers.arabicToRoman(501).should.equal('DI');
+    });
+
+    it('should return DL for 550', function () {
+        RomanNumbers.arabicToRoman(550).should.equal('DL');
+    });
+
+    it('should return DXXX for 530', function () {
+        RomanNumbers.arabicToRoman(530).should.equal('DXXX');
+    });
+
+    it('should return DCCVII for 707', function () {
+        RomanNumbers.arabicToRoman(707).should.equal('DCCVII');
+    });
+
+    it('should return DCCCXC for 890', function () {
+        RomanNumbers.arabicToRoman(890).should.equal('DCCCXC');
+    });
+
+    it('should return MD for 1500', function () {
+        RomanNumbers.arabicToRoman(1500).should.equal('MD');
+    });
+
+    it('should return MDCCC for 1800', function () {
+        RomanNumbers.arabicToRoman(1800).should.equal('MDCCC');
+    });
+
+    it('should return CM for 900', function() {
+        RomanNumbers.arabicToRoman(900).should.equal('CM');
     });
 });
