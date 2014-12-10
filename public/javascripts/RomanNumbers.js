@@ -1,11 +1,3 @@
-function getTrailingIs(arabic) {
-    var trailingIs = "";
-    for (var i = 1; i <= arabic; i++) {
-        trailingIs += 'I';
-    }
-    return trailingIs;
-}
-
 module.exports.arabicToRoman = function(arabic) {
     var roman = "";
     while (arabic >= 10) {
@@ -24,5 +16,10 @@ module.exports.arabicToRoman = function(arabic) {
     substitueSymbolForValue('V', 5);
     substitueSymbolForValue('IV', 4);
 
-    return roman + getTrailingIs(arabic);
+    while (arabic >= 1) {
+        roman += 'I';
+        arabic -= 1;
+    }
+
+    return roman;
 };
