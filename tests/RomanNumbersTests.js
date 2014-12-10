@@ -66,35 +66,43 @@ describe('Roman Numbers', function () {
         RomanNumbers.arabicToRoman(25).should.equal('XXV');
     });
 
-    it('should return XXXVIII for 38', function() {
-       RomanNumbers.arabicToRoman(38).should.equal('XXXVIII');
+    it('should return XXXVIII for 38', function () {
+        RomanNumbers.arabicToRoman(38).should.equal('XXXVIII');
     });
 
-    it('should return IX for 9', function() {
+    it('should return IX for 9', function () {
         RomanNumbers.arabicToRoman(9).should.equal('IX');
     });
 
-    it('should return XXXIX for 39', function() {
-       RomanNumbers.arabicToRoman(39).should.equal('XXXIX');
+    it('should return XXXIX for 39', function () {
+        RomanNumbers.arabicToRoman(39).should.equal('XXXIX');
     });
 
-    it('should return XLI for 41', function() {
-       RomanNumbers.arabicToRoman(40).should.equal('XL');
+    it('should return XLI for 41', function () {
+        RomanNumbers.arabicToRoman(40).should.equal('XL');
     });
 
-    it('should return XLVIII for 48', function() {
-       RomanNumbers.arabicToRoman(48).should.equal('XLVIII');
+    it('should return XLVIII for 48', function () {
+        RomanNumbers.arabicToRoman(48).should.equal('XLVIII');
     });
 
-    it('should return XLIX for 49', function() {
+    it('should return XLIX for 49', function () {
         RomanNumbers.arabicToRoman(49).should.equal('XLIX');
     });
 
-    it('should return LXXXIX for 89', function() {
-       RomanNumbers.arabicToRoman(89).should.equal('LXXXIX');
+    it('should return LXXXIX for 89', function () {
+        RomanNumbers.arabicToRoman(89).should.equal('LXXXIX');
     });
 
-    it('should return CLXXXIX for 189', function() {
+    it('should return CLXXXIX for 189', function () {
         RomanNumbers.arabicToRoman(189).should.equal('CLXXXIX');
     });
+
+    it('should return XCIX for 99', function () {
+        RomanNumbers.arabicToRoman(99).should.equal('XCIX');
+    });
+
+    it('should return CXCIX for 199', function () {
+        RomanNumbers.arabicToRoman(199).should.equal('CXCIX');
+    })
 });
