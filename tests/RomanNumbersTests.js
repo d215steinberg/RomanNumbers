@@ -5,4 +5,8 @@ describe('Roman Numbers', function() {
     it('should convert an arabic number into a roman number', function() {
         RomanNumbers.arabicToRoman.should.be.type('function');
     });
+
+    it("should return I for 1", function() {
+        RomanNumbers.arabicToRoman(1).should.equal('I');
+    })
 });
