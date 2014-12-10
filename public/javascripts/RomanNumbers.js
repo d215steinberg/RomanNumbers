@@ -24,6 +24,10 @@ function getWholePowerOfTen(exponent) {
     return Math.pow(10, exponent);
 }
 
+function getHalfPowerOfTen(exponent) {
+    return getWholePowerOfTen(exponent) / 2;
+}
+
 module.exports.arabicToRoman = function(arabic) {
     var roman = "";
 
@@ -43,11 +47,11 @@ module.exports.arabicToRoman = function(arabic) {
 
     substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[2].whole, getWholePowerOfTen(2));
     substituteSymbolForValue(getAlmostWholeSymbolForPowerOfTen(2), 90);
-    substituteSymbolForValue(symbolsForPowersOfTen[2].half, 50);
+    substituteSymbolForValue(symbolsForPowersOfTen[2].half, getHalfPowerOfTen(2));
     substituteSymbolForValue(getAlmostHalfSymbolForPowerOfTen(2), 40);
     substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[1].whole, getWholePowerOfTen(1));
     substituteSymbolForValue(getAlmostWholeSymbolForPowerOfTen(1), 9);
-    substituteSymbolForValue(symbolsForPowersOfTen[1].half, 5);
+    substituteSymbolForValue(symbolsForPowersOfTen[1].half, getHalfPowerOfTen(1));
     substituteSymbolForValue(getAlmostHalfSymbolForPowerOfTen(1), 4);
     substituteRepeatingSymbolsForValues(symbolsForPowersOfTen[0].whole, getWholePowerOfTen(0));
 
