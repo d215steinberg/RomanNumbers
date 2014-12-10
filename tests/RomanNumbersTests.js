@@ -77,4 +77,12 @@ describe('Roman Numbers', function () {
     it('should return XXXIX for 39', function() {
        RomanNumbers.arabicToRoman(39).should.equal('XXXIX');
     });
+
+    it('should return XLI for 41', function() {
+       RomanNumbers.arabicToRoman(40).should.equal('XL');
+    });
+
+    it('should return XLVIII for 48', function() {
+       RomanNumbers.arabicToRoman(48).should.equal('XLVIII');
+    });
 });
