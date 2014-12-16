@@ -47,6 +47,7 @@ function getAlmostWholePowerOfTen(exponent) {
 function getAlmostHalfPowerOfTen(exponent) {
     return getHalfPowerOfTen(exponent) - getWholePowerOfTen(exponent - 1);
 }
+
 module.exports.arabicToRoman = function(arabic) {
     var roman = "";
 
