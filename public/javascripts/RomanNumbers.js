@@ -83,13 +83,17 @@ module.exports.arabicToRoman = function(arabic) {
         substituteSymbolForValueIfContained(getAlmostHalfSymbolForPowerOfTen(exponent), getAlmostHalfPowerOfTen(exponent));
     }
 
+    function addTrailingIs() {
+        substituteRepeatingSymbolForEachContainmentOfValue('I', 1);
+    }
+
     for (var exp = 3; exp >= 1; exp--) {
         substituteRepeatingSymbolForEachWholePowerOfTen(exp);
         substituteSymbolForAlmostWholePowerOfTen(exp);
         substituteSymbolForHalfPowerOfTen(exp);
         substituteSymbolForAlmostHalfPowerOfTen(exp);
     }
-    substituteRepeatingSymbolForEachWholePowerOfTen(0);
+    addTrailingIs();
 
     return roman;
 };
