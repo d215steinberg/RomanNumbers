@@ -1,3 +1,5 @@
+var _s = require('underscore.string');
+
 var symbolsForPowersOfTen = [
     {
         whole: 'I'
@@ -102,8 +104,9 @@ module.exports.arabicToRoman = function(arabic) {
 module.exports.romanToArabic = function(roman) {
     var arabic = 0;
 
-    if (roman === 'V') {
-        return 5;
+    if (_s.startsWith(roman, 'V')) {
+        arabic += 5;
+        roman = _s.ltrim(roman, 'V');
     }
 
     for (var i = 0; i < roman.length; i++) {

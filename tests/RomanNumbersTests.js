@@ -164,5 +164,9 @@ describe('Roman Numbers', function () {
         it('should return 5 for V', function() {
            RomanNumbers.romanToArabic('V').should.equal(5);
         });
+
+        it('should return 8 for VIII', function() {
+           RomanNumbers.romanToArabic('VIII').should.equal(8);
+        });
     });
 });
