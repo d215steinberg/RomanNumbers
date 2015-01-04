@@ -100,5 +100,5 @@ module.exports.arabicToRoman = function(arabic) {
 };
 
 module.exports.romanToArabic = function() {
-
+    return 1;
 };

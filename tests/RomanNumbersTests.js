@@ -152,9 +152,13 @@ describe('Roman Numbers', function () {
         });
     });
 
-    describe('converting roman to arabic', function() {
-       it('should convert roman number to arabic', function() {
-           RomanNumbers.romanToArabic.should.be.type('function');
-       });
+    describe('converting roman to arabic', function () {
+        it('should convert roman number to arabic', function () {
+            RomanNumbers.romanToArabic.should.be.type('function');
+        });
+
+        it('should return 1 for I', function () {
+            RomanNumbers.romanToArabic('I').should.equal(1);
+        });
     });
 });
