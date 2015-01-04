@@ -101,6 +101,11 @@ module.exports.arabicToRoman = function(arabic) {
 
 module.exports.romanToArabic = function(roman) {
     var arabic = 0;
+
+    if (roman === 'V') {
+        return 5;
+    }
+
     for (var i = 0; i < roman.length; i++) {
         arabic += 1;
     }

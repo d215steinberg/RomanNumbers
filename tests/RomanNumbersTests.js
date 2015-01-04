@@ -159,6 +159,10 @@ describe('Roman Numbers', function () {
 
         it('should return 3 for III', function() {
             RomanNumbers.romanToArabic('III').should.equal(3);
-        })
+        });
+
+        it('should return 5 for V', function() {
+           RomanNumbers.romanToArabic('V').should.equal(5);
+        });
     });
 });
