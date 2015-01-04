@@ -151,4 +151,10 @@ describe('Roman Numbers', function () {
             RomanNumbers.arabicToRoman(900).should.equal('CM');
         });
     });
+
+    describe('converting roman to arabic', function() {
+       it('should convert roman number to arabic', function() {
+           RomanNumbers.romanToArabic.should.be.type('function');
+       });
+    });
 });
