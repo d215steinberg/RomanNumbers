@@ -99,6 +99,10 @@ module.exports.arabicToRoman = function(arabic) {
     return roman;
 };
 
-module.exports.romanToArabic = function() {
-    return 1;
+module.exports.romanToArabic = function(roman) {
+    var arabic = 0;
+    for (var i = 0; i < roman.length; i++) {
+        arabic += 1;
+    }
+    return arabic;
 };
