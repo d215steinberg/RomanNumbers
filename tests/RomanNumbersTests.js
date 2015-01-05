@@ -212,5 +212,9 @@ describe('Roman Numbers', function () {
         it('should return 189 for CLXXXIX', function () {
             RomanNumbers.romanToArabic('CLXXXIX').should.equal(189);
         });
+
+        it('should return 99 for XCIX', function() {
+            RomanNumbers.romanToArabic('XCIX').should.equal(99);
+        });
     });
 });
