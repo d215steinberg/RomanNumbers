@@ -2,38 +2,6 @@ var _s = require('underscore.string');
 var romanSymbols = require('./RomanSymbols.js');
 var powerOfTenValues = require('./PowerOfTenValues.js');
 
-function getWholeSymbolForPowerOfTen(exponent) {
-    return romanSymbols.getWholeSymbolForPowerOfTen(exponent);
-}
-
-function getHalfSymbolForPowerOfTen(exponent) {
-    return romanSymbols.getHalfSymbolForPowerOfTen(exponent);
-}
-
-function getAlmostWholeSymbolForPowerOfTen(exponent) {
-    return romanSymbols.getAlmostWholeSymbolForPowerOfTen(exponent);
-}
-
-function getAlmostHalfSymbolForPowerOfTen(exponent) {
-    return romanSymbols.getAlmostHalfSymbolForPowerOfTen(exponent);
-}
-
-function getWholePowerOfTen(exponent) {
-    return powerOfTenValues.getWholePowerOfTen(exponent);
-}
-
-function getHalfPowerOfTen(exponent) {
-    return powerOfTenValues.getHalfPowerOfTen(exponent);
-}
-
-function getAlmostWholePowerOfTen(exponent) {
-    return powerOfTenValues.getAlmostWholePowerOfTen(exponent);
-}
-
-function getAlmostHalfPowerOfTen(exponent) {
-    return powerOfTenValues.getAlmostHalfPowerOfTen(exponent);
-}
-
 module.exports.arabicToRoman = function(arabic) {
     var roman = "";
 
@@ -55,19 +23,23 @@ module.exports.arabicToRoman = function(arabic) {
     }
 
     function substituteRepeatingSymbolForEachWholePowerOfTen(exponent) {
-        substituteRepeatingSymbolForEachContainmentOfValue(getWholeSymbolForPowerOfTen(exponent), getWholePowerOfTen(exponent));
+        substituteRepeatingSymbolForEachContainmentOfValue(romanSymbols.getWholeSymbolForPowerOfTen(exponent),
+            powerOfTenValues.getWholePowerOfTen(exponent));
     }
 
     function substituteSymbolForAlmostWholePowerOfTen(exponent) {
-        substituteSymbolForValueIfContained(getAlmostWholeSymbolForPowerOfTen(exponent), getAlmostWholePowerOfTen(exponent));
+        substituteSymbolForValueIfContained(romanSymbols.getAlmostWholeSymbolForPowerOfTen(exponent),
+            powerOfTenValues.getAlmostWholePowerOfTen(exponent));
     }
 
     function substituteSymbolForHalfPowerOfTen(exponent) {
-        substituteSymbolForValueIfContained(getHalfSymbolForPowerOfTen(exponent), getHalfPowerOfTen(exponent));
+        substituteSymbolForValueIfContained(romanSymbols.getHalfSymbolForPowerOfTen(exponent),
+            powerOfTenValues.getHalfPowerOfTen(exponent));
     }
 
     function substituteSymbolForAlmostHalfPowerOfTen(exponent) {
-        substituteSymbolForValueIfContained(getAlmostHalfSymbolForPowerOfTen(exponent), getAlmostHalfPowerOfTen(exponent));
+        substituteSymbolForValueIfContained(romanSymbols.getAlmostHalfSymbolForPowerOfTen(exponent),
+            powerOfTenValues.getAlmostHalfPowerOfTen(exponent));
     }
 
     function addTrailingIs() {
@@ -107,10 +79,14 @@ module.exports.romanToArabic = function(roman) {
     }
 
     for (var exp = 3; exp >= 1; exp--) {
-        substituteValueForEachInstanceOfLeadingSymbol(getWholeSymbolForPowerOfTen(exp), getWholePowerOfTen(exp));
-        substituteValueForEachInstanceOfLeadingSymbol(getAlmostWholeSymbolForPowerOfTen(exp), getAlmostWholePowerOfTen(exp));
-        substituteValueForEachInstanceOfLeadingSymbol(getHalfSymbolForPowerOfTen(exp), getHalfPowerOfTen(exp));
-        substituteValueForEachInstanceOfLeadingSymbol(getAlmostHalfSymbolForPowerOfTen(exp), getAlmostHalfPowerOfTen(exp));
+        substituteValueForEachInstanceOfLeadingSymbol(romanSymbols.getWholeSymbolForPowerOfTen(exp),
+            powerOfTenValues.getWholePowerOfTen(exp));
+        substituteValueForEachInstanceOfLeadingSymbol(romanSymbols.getAlmostWholeSymbolForPowerOfTen(exp),
+            powerOfTenValues.getAlmostWholePowerOfTen(exp));
+        substituteValueForEachInstanceOfLeadingSymbol(romanSymbols.getHalfSymbolForPowerOfTen(exp),
+            powerOfTenValues.getHalfPowerOfTen(exp));
+        substituteValueForEachInstanceOfLeadingSymbol(romanSymbols.getAlmostHalfSymbolForPowerOfTen(exp),
+            powerOfTenValues.getAlmostHalfPowerOfTen(exp));
     }
     substituteValueForTrailingIs();
 
