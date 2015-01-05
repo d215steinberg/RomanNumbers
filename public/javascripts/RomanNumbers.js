@@ -113,8 +113,8 @@ module.exports.romanToArabic = function(roman) {
 
     substituteValueForSymbolIfContained('X', 10);
     substituteValueForSymbolIfContained('IX', 9);
-    substituteValueForSymbolIfContained('IV', 4);
     substituteValueForSymbolIfContained('V', 5);
+    substituteValueForSymbolIfContained('IV', 4);
 
     for (var i = 0; i < roman.length; i++) {
         arabic += 1;
