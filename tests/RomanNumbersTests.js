@@ -176,5 +176,9 @@ describe('Roman Numbers', function () {
         it('should return 10 for X', function() {
            RomanNumbers.romanToArabic('X').should.equal(10);
         });
+
+        it('should return 18 for XVIII', function() {
+            RomanNumbers.romanToArabic('XVIII').should.equal(18);
+        });
     });
 });
