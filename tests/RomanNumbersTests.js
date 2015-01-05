@@ -157,32 +157,36 @@ describe('Roman Numbers', function () {
             RomanNumbers.romanToArabic('I').should.equal(1);
         });
 
-        it('should return 3 for III', function() {
+        it('should return 3 for III', function () {
             RomanNumbers.romanToArabic('III').should.equal(3);
         });
 
-        it('should return 5 for V', function() {
-           RomanNumbers.romanToArabic('V').should.equal(5);
+        it('should return 5 for V', function () {
+            RomanNumbers.romanToArabic('V').should.equal(5);
         });
 
-        it('should return 8 for VIII', function() {
-           RomanNumbers.romanToArabic('VIII').should.equal(8);
+        it('should return 8 for VIII', function () {
+            RomanNumbers.romanToArabic('VIII').should.equal(8);
         });
 
-        it('should return 4 for IV', function() {
+        it('should return 4 for IV', function () {
             RomanNumbers.romanToArabic('IV').should.equal(4);
         });
 
-        it('should return 10 for X', function() {
-           RomanNumbers.romanToArabic('X').should.equal(10);
+        it('should return 10 for X', function () {
+            RomanNumbers.romanToArabic('X').should.equal(10);
         });
 
-        it('should return 18 for XVIII', function() {
+        it('should return 18 for XVIII', function () {
             RomanNumbers.romanToArabic('XVIII').should.equal(18);
         });
 
-        it('should return 9 for IX', function() {
-           RomanNumbers.romanToArabic('IX').should.equal(9);
+        it('should return 9 for IX', function () {
+            RomanNumbers.romanToArabic('IX').should.equal(9);
+        });
+
+        it('should return 19 for XIX', function () {
+            RomanNumbers.romanToArabic('XIX').should.equal(19);
         });
     });
 });
