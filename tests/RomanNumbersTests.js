@@ -228,5 +228,45 @@ describe('Roman Numbers', function () {
         it('should return 2999 for MMCMXCIX', function () {
             RomanNumbers.romanToArabic('MMCMXCIX').should.equal(2999);
         });
+
+        it('should return 2540 for MMDXL', function () {
+            RomanNumbers.romanToArabic('MMDXL').should.equal(2540);
+        });
+
+        it('should return 3000 for MMM', function () {
+            RomanNumbers.romanToArabic('MMM').should.equal(3000);
+        });
+
+        it('should return 501 for DI', function () {
+            RomanNumbers.romanToArabic('DI').should.equal(501);
+        });
+
+        it('should return 550 for DL', function () {
+            RomanNumbers.romanToArabic('DL').should.equal(550);
+        });
+
+        it('should return 530 for DXXX', function () {
+            RomanNumbers.romanToArabic('DXXX').should.equal(530);
+        });
+
+        it('should return 707 for DCCVII', function () {
+            RomanNumbers.romanToArabic('DCCVII').should.equal(707);
+        });
+
+        it('should return 890 for DCCCXC', function () {
+            RomanNumbers.romanToArabic('DCCCXC').should.equal(890);
+        });
+
+        it('should return 1500 for MD', function () {
+            RomanNumbers.romanToArabic('MD').should.equal(1500);
+        });
+
+        it('should return 1800 for MDCCC', function () {
+            RomanNumbers.romanToArabic('MDCCC').should.equal(1800);
+        });
+
+        it('should return 900 for CM', function () {
+            RomanNumbers.romanToArabic('CM').should.equal(900);
+        });
     });
 });
