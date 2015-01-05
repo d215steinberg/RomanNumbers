@@ -111,7 +111,17 @@ module.exports.romanToArabic = function(roman) {
         }
     }
 
-    substituteValueForSymbolIfContained('X', 10);
+    function substituteValueForEachContainmentOfRepeatingSymbol(symbol, value) {
+        if (_s.startsWith(roman, symbol)) {
+            var oldRomanLength = roman.length;
+            roman = _s.ltrim(roman, symbol);
+            var newRomanLength = roman.length;
+            var repeatingSymbolCount = oldRomanLength - newRomanLength;
+            arabic += repeatingSymbolCount * value;
+        }
+    }
+
+    substituteValueForEachContainmentOfRepeatingSymbol('X', 10);
     substituteValueForSymbolIfContained('IX', 9);
     substituteValueForSymbolIfContained('V', 5);
     substituteValueForSymbolIfContained('IV', 4);
