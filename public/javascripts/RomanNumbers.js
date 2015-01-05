@@ -104,13 +104,17 @@ module.exports.arabicToRoman = function(arabic) {
 module.exports.romanToArabic = function(roman) {
     var arabic = 0;
 
+    function trimLeadingSymbols(symbol) {
+        var oldRomanLength = roman.length;
+        roman = _s.ltrim(roman, symbol);
+        var newRomanLength = roman.length;
+        return (oldRomanLength - newRomanLength) / symbol.length;
+    }
+
     function substituteValueForEachInstanceOfLeadingSymbol(symbol, value) {
         if (_s.startsWith(roman, symbol)) {
-            var oldRomanLength = roman.length;
-            roman = _s.ltrim(roman, symbol);
-            var newRomanLength = roman.length;
-            var repeatingSymbolCount = (oldRomanLength - newRomanLength) / symbol.length;
-            arabic += repeatingSymbolCount * value;
+            var symbolCount = trimLeadingSymbols(symbol);
+            arabic += symbolCount * value;
         }
     }
 
