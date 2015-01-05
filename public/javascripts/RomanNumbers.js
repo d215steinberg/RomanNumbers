@@ -106,8 +106,8 @@ module.exports.romanToArabic = function(roman) {
 
     function substituteValueForSymbolIfContained(symbol, value) {
         if (_s.startsWith(roman, symbol)) {
-            arabic += value;
             roman = _s.ltrim(roman, symbol);
+            arabic += value;
         }
     }
 
