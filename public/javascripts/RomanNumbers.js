@@ -122,9 +122,7 @@ module.exports.romanToArabic = function(roman) {
     }
 
     function substituteValueForTrailingIs() {
-        for (var i = 0; i < roman.length; i++) {
-            arabic += 1;
-        }
+        arabic += roman.length;
     }
 
     for (var exp = 3; exp >= 1; exp--) {
