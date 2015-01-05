@@ -1,5 +1,6 @@
 var _s = require('underscore.string');
 var romanSymbols = require('./RomanSymbols.js');
+var powerOfTenValues = require('./PowerOfTenValues.js');
 
 function getWholeSymbolForPowerOfTen(exponent) {
     return romanSymbols.getWholeSymbolForPowerOfTen(exponent);
@@ -18,19 +19,19 @@ function getAlmostHalfSymbolForPowerOfTen(exponent) {
 }
 
 function getWholePowerOfTen(exponent) {
-    return romanSymbols.getWholePowerOfTen(exponent);
+    return powerOfTenValues.getWholePowerOfTen(exponent);
 }
 
 function getHalfPowerOfTen(exponent) {
-    return romanSymbols.getHalfPowerOfTen(exponent);
+    return powerOfTenValues.getHalfPowerOfTen(exponent);
 }
 
 function getAlmostWholePowerOfTen(exponent) {
-    return romanSymbols.getAlmostWholePowerOfTen(exponent);
+    return powerOfTenValues.getAlmostWholePowerOfTen(exponent);
 }
 
 function getAlmostHalfPowerOfTen(exponent) {
-    return romanSymbols.getAlmostHalfPowerOfTen(exponent);
+    return powerOfTenValues.getAlmostHalfPowerOfTen(exponent);
 }
 
 module.exports.arabicToRoman = function(arabic) {
