@@ -104,15 +104,15 @@ module.exports.arabicToRoman = function(arabic) {
 module.exports.romanToArabic = function(roman) {
     var arabic = 0;
 
-    if (_s.startsWith(roman, 'IV')) {
-        arabic += 4;
-        roman = _s.ltrim(roman, 'IV');
+    function substituteValueForSymbolIfContained(symbol, value) {
+        if (_s.startsWith(roman, symbol)) {
+            arabic += value;
+            roman = _s.ltrim(roman, symbol);
+        }
     }
 
-    if (_s.startsWith(roman, 'V')) {
-        arabic += 5;
-        roman = _s.ltrim(roman, 'V');
-    }
+    substituteValueForSymbolIfContained('IV', 4);
+    substituteValueForSymbolIfContained('V', 5);
 
     for (var i = 0; i < roman.length; i++) {
         arabic += 1;
