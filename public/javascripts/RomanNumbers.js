@@ -104,19 +104,12 @@ module.exports.arabicToRoman = function(arabic) {
 module.exports.romanToArabic = function(roman) {
     var arabic = 0;
 
-    function substituteValueForLeadingSymbol(symbol, value) {
-        if (_s.startsWith(roman, symbol)) {
-            roman = _s.ltrim(roman, symbol);
-            arabic += value;
-        }
-    }
-
-    function substituteValueForEachInstanceOfRepeatingLeadingSymbol(symbol, value) {
+    function substituteValueForEachInstanceOfLeadingSymbol(symbol, value) {
         if (_s.startsWith(roman, symbol)) {
             var oldRomanLength = roman.length;
             roman = _s.ltrim(roman, symbol);
             var newRomanLength = roman.length;
-            var repeatingSymbolCount = oldRomanLength - newRomanLength;
+            var repeatingSymbolCount = (oldRomanLength - newRomanLength) / symbol.length;
             arabic += repeatingSymbolCount * value;
         }
     }
@@ -126,10 +119,10 @@ module.exports.romanToArabic = function(roman) {
     }
 
     for (var exp = 3; exp >= 1; exp--) {
-        substituteValueForEachInstanceOfRepeatingLeadingSymbol(getWholeSymbolForPowerOfTen(exp), getWholePowerOfTen(exp));
-        substituteValueForLeadingSymbol(getAlmostWholeSymbolForPowerOfTen(exp), getAlmostWholePowerOfTen(exp));
-        substituteValueForLeadingSymbol(getHalfSymbolForPowerOfTen(exp), getHalfPowerOfTen(exp));
-        substituteValueForLeadingSymbol(getAlmostHalfSymbolForPowerOfTen(exp), getAlmostHalfPowerOfTen(exp));
+        substituteValueForEachInstanceOfLeadingSymbol(getWholeSymbolForPowerOfTen(exp), getWholePowerOfTen(exp));
+        substituteValueForEachInstanceOfLeadingSymbol(getAlmostWholeSymbolForPowerOfTen(exp), getAlmostWholePowerOfTen(exp));
+        substituteValueForEachInstanceOfLeadingSymbol(getHalfSymbolForPowerOfTen(exp), getHalfPowerOfTen(exp));
+        substituteValueForEachInstanceOfLeadingSymbol(getAlmostHalfSymbolForPowerOfTen(exp), getAlmostHalfPowerOfTen(exp));
     }
     substituteValueForTrailingIs();
 
