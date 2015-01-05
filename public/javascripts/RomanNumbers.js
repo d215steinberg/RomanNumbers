@@ -104,14 +104,14 @@ module.exports.arabicToRoman = function(arabic) {
 module.exports.romanToArabic = function(roman) {
     var arabic = 0;
 
-    function substituteValueForSymbolIfContained(symbol, value) {
+    function substituteValueForLeadingSymbol(symbol, value) {
         if (_s.startsWith(roman, symbol)) {
             roman = _s.ltrim(roman, symbol);
             arabic += value;
         }
     }
 
-    function substituteValueForEachContainmentOfRepeatingSymbol(symbol, value) {
+    function substituteValueForEachInstanceOfRepeatingLeadingSymbol(symbol, value) {
         if (_s.startsWith(roman, symbol)) {
             var oldRomanLength = roman.length;
             roman = _s.ltrim(roman, symbol);
@@ -121,14 +121,14 @@ module.exports.romanToArabic = function(roman) {
         }
     }
 
-    substituteValueForEachContainmentOfRepeatingSymbol('C', 100);
-    substituteValueForSymbolIfContained('XC', 90);
-    substituteValueForSymbolIfContained('L', 50);
-    substituteValueForSymbolIfContained('XL', 40);
-    substituteValueForEachContainmentOfRepeatingSymbol('X', 10);
-    substituteValueForSymbolIfContained('IX', 9);
-    substituteValueForSymbolIfContained('V', 5);
-    substituteValueForSymbolIfContained('IV', 4);
+    substituteValueForEachInstanceOfRepeatingLeadingSymbol('C', 100);
+    substituteValueForLeadingSymbol('XC', 90);
+    substituteValueForLeadingSymbol('L', 50);
+    substituteValueForLeadingSymbol('XL', 40);
+    substituteValueForEachInstanceOfRepeatingLeadingSymbol('X', 10);
+    substituteValueForLeadingSymbol('IX', 9);
+    substituteValueForLeadingSymbol('V', 5);
+    substituteValueForLeadingSymbol('IV', 4);
 
     for (var i = 0; i < roman.length; i++) {
         arabic += 1;

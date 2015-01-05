@@ -217,8 +217,12 @@ describe('Roman Numbers', function () {
             RomanNumbers.romanToArabic('XCIX').should.equal(99);
         });
 
-        it('shold return 199 for CXCIX', function() {
+        it('should return 199 for CXCIX', function() {
            RomanNumbers.romanToArabic('CXCIX').should.equal(199);
+        });
+
+        it('should return 399 for CCCXCIX', function() {
+            RomanNumbers.romanToArabic('CCCXCIX').should.equal(399);
         });
     });
 });
