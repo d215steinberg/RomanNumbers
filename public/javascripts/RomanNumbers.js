@@ -121,7 +121,7 @@ module.exports.romanToArabic = function(roman) {
         }
     }
 
-    for (var exp = 2; exp >= 1; exp--) {
+    for (var exp = 3; exp >= 1; exp--) {
         substituteValueForEachInstanceOfRepeatingLeadingSymbol(getWholeSymbolForPowerOfTen(exp), getWholePowerOfTen(exp));
         substituteValueForLeadingSymbol(getAlmostWholeSymbolForPowerOfTen(exp), getAlmostWholePowerOfTen(exp));
         substituteValueForLeadingSymbol(getHalfSymbolForPowerOfTen(exp), getHalfPowerOfTen(exp));

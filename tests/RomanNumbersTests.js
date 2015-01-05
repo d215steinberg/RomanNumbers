@@ -224,5 +224,9 @@ describe('Roman Numbers', function () {
         it('should return 399 for CCCXCIX', function() {
             RomanNumbers.romanToArabic('CCCXCIX').should.equal(399);
         });
+
+        it('should return 2999 for MMCMXCIX', function () {
+            RomanNumbers.romanToArabic('MMCMXCIX').should.equal(2999);
+        });
     });
 });
