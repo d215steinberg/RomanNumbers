@@ -121,15 +121,19 @@ module.exports.romanToArabic = function(roman) {
         }
     }
 
+    function substituteValueForTrailingIs() {
+        for (var i = 0; i < roman.length; i++) {
+            arabic += 1;
+        }
+    }
+
     for (var exp = 3; exp >= 1; exp--) {
         substituteValueForEachInstanceOfRepeatingLeadingSymbol(getWholeSymbolForPowerOfTen(exp), getWholePowerOfTen(exp));
         substituteValueForLeadingSymbol(getAlmostWholeSymbolForPowerOfTen(exp), getAlmostWholePowerOfTen(exp));
         substituteValueForLeadingSymbol(getHalfSymbolForPowerOfTen(exp), getHalfPowerOfTen(exp));
         substituteValueForLeadingSymbol(getAlmostHalfSymbolForPowerOfTen(exp), getAlmostHalfPowerOfTen(exp));
     }
+    substituteValueForTrailingIs();
 
-    for (var i = 0; i < roman.length; i++) {
-        arabic += 1;
-    }
     return arabic;
 };
