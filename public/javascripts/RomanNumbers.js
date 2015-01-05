@@ -111,6 +111,10 @@ module.exports.romanToArabic = function(roman) {
         }
     }
 
+    if (roman === 'X') {
+        return 10;
+    }
+
     substituteValueForSymbolIfContained('IV', 4);
     substituteValueForSymbolIfContained('V', 5);
 

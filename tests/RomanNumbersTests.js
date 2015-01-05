@@ -171,6 +171,10 @@ describe('Roman Numbers', function () {
 
         it('should return 4 for IV', function() {
             RomanNumbers.romanToArabic('IV').should.equal(4);
-        })
+        });
+
+        it('should return 10 for X', function() {
+           RomanNumbers.romanToArabic('X').should.equal(10);
+        });
     });
 });
