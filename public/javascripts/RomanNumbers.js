@@ -1,53 +1,36 @@
 var _s = require('underscore.string');
-
-var symbolsForPowersOfTen = [
-    {
-        whole: 'I'
-    },
-    {
-        half: 'V',
-        whole: 'X'
-    },
-    {
-        half: 'L',
-        whole: 'C'
-    },
-    {
-        half: 'D',
-        whole: 'M'
-    }
-];
+var romanSymbols = require('./RomanSymbols.js');
 
 function getWholeSymbolForPowerOfTen(exponent) {
-    return symbolsForPowersOfTen[exponent].whole;
+    return romanSymbols.getWholeSymbolForPowerOfTen(exponent);
 }
 
 function getHalfSymbolForPowerOfTen(exponent) {
-    return symbolsForPowersOfTen[exponent].half;
+    return romanSymbols.getHalfSymbolForPowerOfTen(exponent);
 }
 
 function getAlmostWholeSymbolForPowerOfTen(exponent) {
-    return symbolsForPowersOfTen[exponent - 1].whole + symbolsForPowersOfTen[exponent].whole;
+    return romanSymbols.getAlmostWholeSymbolForPowerOfTen(exponent);
 }
 
 function getAlmostHalfSymbolForPowerOfTen(exponent) {
-    return symbolsForPowersOfTen[exponent - 1].whole + symbolsForPowersOfTen[exponent].half;
+    return romanSymbols.getAlmostHalfSymbolForPowerOfTen(exponent);
 }
 
 function getWholePowerOfTen(exponent) {
-    return Math.pow(10, exponent);
+    return romanSymbols.getWholePowerOfTen(exponent);
 }
 
 function getHalfPowerOfTen(exponent) {
-    return getWholePowerOfTen(exponent) / 2;
+    return romanSymbols.getHalfPowerOfTen(exponent);
 }
 
 function getAlmostWholePowerOfTen(exponent) {
-    return getWholePowerOfTen(exponent) - getWholePowerOfTen(exponent - 1);
+    return romanSymbols.getAlmostWholePowerOfTen(exponent);
 }
 
 function getAlmostHalfPowerOfTen(exponent) {
-    return getHalfPowerOfTen(exponent) - getWholePowerOfTen(exponent - 1);
+    return romanSymbols.getAlmostHalfPowerOfTen(exponent);
 }
 
 module.exports.arabicToRoman = function(arabic) {
