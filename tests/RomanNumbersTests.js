@@ -216,5 +216,9 @@ describe('Roman Numbers', function () {
         it('should return 99 for XCIX', function() {
             RomanNumbers.romanToArabic('XCIX').should.equal(99);
         });
+
+        it('shold return 199 for CXCIX', function() {
+           RomanNumbers.romanToArabic('CXCIX').should.equal(199);
+        });
     });
 });
