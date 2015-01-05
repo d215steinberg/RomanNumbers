@@ -197,16 +197,20 @@ describe('Roman Numbers', function () {
             RomanNumbers.romanToArabic('XXXIX').should.equal(39);
         });
 
-        it('should return 50 for L', function() {
-           RomanNumbers.romanToArabic('L').should.equal(50);
+        it('should return 50 for L', function () {
+            RomanNumbers.romanToArabic('L').should.equal(50);
         });
 
-        it('should return 89 for LXXXIX', function() {
-           RomanNumbers.romanToArabic('LXXXIX').should.equal(89);
+        it('should return 89 for LXXXIX', function () {
+            RomanNumbers.romanToArabic('LXXXIX').should.equal(89);
         });
 
-        it('should return 49 for XLIX', function() {
-           RomanNumbers.romanToArabic('XLIX').should.equal(49);
+        it('should return 49 for XLIX', function () {
+            RomanNumbers.romanToArabic('XLIX').should.equal(49);
+        });
+
+        it('should return 189 for CLXXXIX', function () {
+            RomanNumbers.romanToArabic('CLXXXIX').should.equal(189);
         });
     });
 });
