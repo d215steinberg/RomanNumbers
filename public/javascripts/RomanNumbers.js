@@ -121,14 +121,14 @@ module.exports.romanToArabic = function(roman) {
         }
     }
 
-    substituteValueForEachInstanceOfRepeatingLeadingSymbol('C', 100);
-    substituteValueForLeadingSymbol('XC', 90);
-    substituteValueForLeadingSymbol('L', 50);
-    substituteValueForLeadingSymbol('XL', 40);
-    substituteValueForEachInstanceOfRepeatingLeadingSymbol('X', 10);
-    substituteValueForLeadingSymbol('IX', 9);
-    substituteValueForLeadingSymbol('V', 5);
-    substituteValueForLeadingSymbol('IV', 4);
+    substituteValueForEachInstanceOfRepeatingLeadingSymbol(getWholeSymbolForPowerOfTen(2), getWholePowerOfTen((2)));
+    substituteValueForLeadingSymbol(getAlmostWholeSymbolForPowerOfTen(2), getAlmostWholePowerOfTen(2));
+    substituteValueForLeadingSymbol(getHalfSymbolForPowerOfTen(2), getHalfPowerOfTen(2));
+    substituteValueForLeadingSymbol(getAlmostHalfSymbolForPowerOfTen(2), getAlmostHalfPowerOfTen(2));
+    substituteValueForEachInstanceOfRepeatingLeadingSymbol(getWholeSymbolForPowerOfTen(1), getWholePowerOfTen(1));
+    substituteValueForLeadingSymbol(getAlmostWholeSymbolForPowerOfTen(1), getAlmostWholePowerOfTen(1));
+    substituteValueForLeadingSymbol(getHalfSymbolForPowerOfTen(1), getHalfPowerOfTen(1));
+    substituteValueForLeadingSymbol(getAlmostHalfSymbolForPowerOfTen(1), getAlmostHalfPowerOfTen(1));
 
     for (var i = 0; i < roman.length; i++) {
         arabic += 1;
