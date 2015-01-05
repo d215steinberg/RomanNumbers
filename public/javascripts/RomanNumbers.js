@@ -125,6 +125,7 @@ module.exports.romanToArabic = function(roman) {
         return 50;
     }
 
+    substituteValueForSymbolIfContained('L', 50);
     substituteValueForEachContainmentOfRepeatingSymbol('X', 10);
     substituteValueForSymbolIfContained('IX', 9);
     substituteValueForSymbolIfContained('V', 5);

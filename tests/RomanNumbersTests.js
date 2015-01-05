@@ -200,5 +200,9 @@ describe('Roman Numbers', function () {
         it('should return 50 for L', function() {
            RomanNumbers.romanToArabic('L').should.equal(50);
         });
+
+        it('should return 89 for LXXXIX', function() {
+           RomanNumbers.romanToArabic('LXXXIX').should.equal(89);
+        });
     });
 });
